@@ -1,4 +1,21 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Regular.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url('../fonts/Roboto-Bold.ttf');
+    font-display: swap;
+}
+
 :root {
+    /* ### Fonts */
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+    --font-regular: 'Roboto', sans-serif;
+    --font-bold: 'Roboto-Bold', sans-serif;
     /* ### Primary */
     --tomato: hsl(4, 100%, 67%);
     /* ### Neutral */
@@ -17,22 +34,128 @@ html {
 *::before,
 *::after {
     box-sizing: inherit;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    font-size: 1rem;
-    font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font: var(--font-weight-regular) 1rem var(--font-regular);
+    background-color: var(--white);
+}
+
+img {
+    max-inline-size: 100%;
+    block-size: auto;
+}
+
+button {
+    cursor: pointer;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* 320px */
+    min-width: 20rem;
+    /* 400px */
+    max-width: 25rem;
+    margin: 0 auto;
+}
+
+.illustration-mobile,
+.illustration-desktop {
+    display: block;
+}
+
+.form {
+    padding: 2rem;
+}
+
+.title,
+.description {
+    margin-block-end: 1.5rem;
+}
+
+.title {
+    font-size: 2rem;
+}
+
+.item+.item {
+    margin-block-start: 1rem;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.item img {
+    width: 1rem;
+    height: 1rem;
+}
+
+.email {
+    margin-block-start: 2rem;
+
+    label {
+        display: block;
+        margin-block-end: .5rem;
+        font-weight: 400;
+        font-size: .75rem;
+    }
+
+    input[type='email'] {
+        width: 100%;
+        border: 1px solid var(--grey);
+        border-radius: .5rem;
+        padding: 1rem;
+    }
+}
+
+.form button[type='submit'] {
+    width: 100%;
+    margin-block-start: 2rem;
+    border: 0;
+    border-radius: .5rem;
+    padding: 1rem;
+    color: var(--white);
+    background-color: var(--darkSlateGrey);
+}
+
+.o-7 {
+    opacity: .7;
+}
+
+.hidden {
+    display: none;
+}
+
+.regular {
+    font-weight: var(--font-weight-regular);
+    font-family: var(--font-regular);
+}
+
+.bold {
+    font-weight: var(--font-weight-bold);
+    font-family: var(--font-bold);
 }
 
 .attribution {
-    font-size: 11px;
+    /* 11px */
+    font-size: 0.6875rem;
     text-align: center;
 }
 
 .attribution a {
     text-decoration: none;
-    font-weight: 700;
+    /* 14px */
+    font: 0.875rem var(--font-bold);
     color: var(--darkSlateGrey);
 }
 
