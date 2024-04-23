@@ -20,14 +20,14 @@
 <body>
     <main class="container">
         <!-- Sign-up form start -->
-        <section>
+        <section class="first">
             <img class="illustration-mobile" src="assets/images/illustration-sign-up-mobile.svg"
                 alt="mobile illustration" width="375" height="284">
 
             <img class="illustration-desktop hidden" src="assets/images/illustration-sign-up-desktop.svg"
                 alt="desktop illustration" width="400" height="593">
 
-            <form action="#" method="get" class="form">
+            <form method="get" class="form" novalidate>
                 <h1 class="title bold">Stay updated!</h1>
 
                 <p class="description">Join 60,000+ product managers receiving monthly updates on:</p>
@@ -47,10 +47,14 @@
                     And much more!
                 </p>
 
-                <p class="email">
-                    <label for="email" class="bold">Email address</label>
-                    <input class="o-7" type="email" name="email" id="email" placeholder="email@company.com">
-                </p>
+                <div>
+                    <p class="email">
+                        <label for="email" class="bold">Email address</label>
+                        <span aria-live="polite" class="hidden" id="email-error">Valid email required</span>
+                    </p>
+
+                    <input type="email" name="email" id="email" placeholder="email@company.com">
+                </div>
 
                 <button class="button" type="submit">Subscribe to monthly newsletter</button>
             </form>
@@ -59,14 +63,19 @@
 
         <!-- Success message start -->
         <section class="success hidden">
-            <h1>Thanks for subscribing!</h1>
+            <header>
+                <img src="assets/images/icon-success.svg" alt="icon success" width="64" height="64">
 
-            <p>
-                A confirmation email has been sent to <strong class="bold">ash@loremcompany.com.</strong>
-                Please open it and click the button inside to confirm your subscription.
-            </p>
+                <h1>Thanks for subscribing!</h1>
 
-            <button class="button">Dismiss message</button>
+                <p>
+                    A confirmation email has been sent to <strong class="bold"
+                        id="email-confirm">ash@loremcompany.com.</strong>
+                    Please open it and click the button inside to confirm your subscription.
+                </p>
+            </header>
+
+            <button class="button" id="button-dismiss">Dismiss message</button>
         </section>
         <!-- Success message end -->
     </main>
@@ -75,7 +84,7 @@
         <div class="attribution">
             Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend
                 Mentor</a>.
-            Coded by <a href="https://github.com/tufcoder">Oswaldo Castro</a>.
+            Coded by <a href="https://github.com/tufcoder" target="_blank">Oswaldo Castro</a>.
         </div>
     </footer>
 </body>

@@ -18,10 +18,12 @@
     --font-bold: 'Roboto-Bold', sans-serif;
     /* ### Primary */
     --tomato: hsl(4, 100%, 67%);
+    --tomatoAlpha: rgba(255, 98, 87, .3);
     /* ### Neutral */
     --darkSlateGrey: hsl(234, 29%, 20%);
     --charcoalGrey: hsl(235, 18%, 26%);
     --grey: hsl(231, 7%, 60%);
+    --greyAlpha: rgba(146, 148, 160, .7);
     --white: hsl(0, 0%, 100%);
     --linkColor: hsl(228, 45%, 44%);
 }
@@ -40,7 +42,8 @@ html {
 
 body {
     font: var(--font-weight-regular) 1rem var(--font-regular);
-    background-color: var(--white);
+    color: var(--charcoalGrey);
+    background-color: var(--darkSlateGrey);
 }
 
 img {
@@ -50,26 +53,41 @@ img {
 
 button {
     cursor: pointer;
+    transition: opacity .2s ease;
+
+    &:hover {
+        opacity: .9;
+    }
 }
 
 button,
 input {
-    font: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+a {
+    color: inherit;
 }
 
 .container {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 2fr;
     /* 320px */
     min-width: 20rem;
     /* 400px */
     max-width: 25rem;
+    /* 800px */
+    max-height: 50rem;
     margin: 0 auto;
+    background-color: var(--white);
 }
 
 .illustration-mobile,
 .illustration-desktop {
     display: block;
+    width: 100%;
 }
 
 .form {
@@ -100,27 +118,8 @@ input {
     height: 1rem;
 }
 
-.email {
-    margin-block-start: 2rem;
-
-    label {
-        display: block;
-        margin-block-end: .5rem;
-        font-weight: 400;
-        font-size: .75rem;
-    }
-
-    input[type='email'] {
-        width: 100%;
-        border: 1px solid var(--grey);
-        border-radius: .5rem;
-        padding: 1rem;
-    }
-}
-
-.form button[type='submit'] {
+.button {
     width: 100%;
-    margin-block-start: 2rem;
     border: 0;
     border-radius: .5rem;
     padding: 1rem;
@@ -128,17 +127,65 @@ input {
     background-color: var(--darkSlateGrey);
 }
 
-.o-7 {
-    opacity: .7;
+.email {
+    display: flex;
+    justify-content: space-between;
+    margin-block-start: 2rem;
+    margin-block-end: .5rem;
+    font-size: .75rem;
+
+    label {
+        font-weight: 400;
+    }
+
+    span {
+        color: var(--tomato);
+    }
+}
+
+input[type='email'] {
+    width: 100%;
+    border: 1px solid var(--greyAlpha);
+    border-radius: .5rem;
+    padding: 1rem;
+    outline: 0;
+
+    &:focus {
+        border: 1px solid var(--greyAlpha);
+        color: var(--charcoalGrey);
+        background-color: var(--white);
+    }
+}
+
+.form button[type='submit'] {
+    margin-block-start: 2rem;
+}
+
+.success {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50rem;
+    padding: 2rem;
+
+    img,
+    h1 {
+        margin-block-end: 2rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+.form .error {
+    border: 1px solid var(--tomatoAlpha);
+    color: var(--tomato);
+    background-color: var(--tomatoAlpha);
 }
 
 .hidden {
     display: none;
-}
-
-.regular {
-    font-weight: var(--font-weight-regular);
-    font-family: var(--font-regular);
 }
 
 .bold {
@@ -150,13 +197,13 @@ input {
     /* 11px */
     font-size: 0.6875rem;
     text-align: center;
+    color: var(--white);
 }
 
 .attribution a {
     text-decoration: none;
     /* 14px */
     font: 0.875rem var(--font-bold);
-    color: var(--darkSlateGrey);
 }
 
 footer {
