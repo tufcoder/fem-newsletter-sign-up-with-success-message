@@ -72,8 +72,6 @@ a {
 }
 
 .container {
-    display: grid;
-    grid-template-columns: 2fr;
     /* 320px */
     min-width: 20rem;
     /* 400px */
@@ -185,12 +183,19 @@ input[type='email'] {
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 .bold {
     font-weight: var(--font-weight-bold);
     font-family: var(--font-bold);
+}
+
+.tks {
+    /* 496px */
+    width: 31rem;
+    /* 480px */
+    height: 30rem;
 }
 
 .attribution {

@@ -1,3 +1,4 @@
+const container = document.querySelector('.container')
 const first = document.querySelector('.first')
 const success = document.querySelector('.success')
 const form = document.querySelector('.form')
@@ -26,6 +27,10 @@ const handleSubmit = (event) => {
         if (!emailError.classList.contains('hidden'))
             emailError.classList.add('hidden')
 
+        if (document.body.clientWidth > 900) {
+            container.classList.add('tks')
+        }
+
         first.classList.add('hidden')
         success.classList.remove('hidden')
         emailConfirm.textContent = email.value
@@ -36,6 +41,7 @@ const handleSubmit = (event) => {
 const handleDismiss = () => {
     first.classList.remove('hidden')
     success.classList.add('hidden')
+    container.classList.remove('tks')
 }
 
 form.addEventListener('submit', handleSubmit)
