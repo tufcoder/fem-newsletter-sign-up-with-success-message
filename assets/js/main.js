@@ -27,7 +27,7 @@ const handleSubmit = (event) => {
         if (!emailError.classList.contains('hidden'))
             emailError.classList.add('hidden')
 
-        if (document.body.clientWidth > 900) {
+        if (document.body.clientWidth > 1440) {
             container.classList.add('tks')
         }
 

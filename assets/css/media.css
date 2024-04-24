@@ -1,6 +1,5 @@
 /* 1440px */
-/* @media (min-width: 90rem) { */
-@media (min-width: 900px) {
+@media (min-width: 90rem) {
     body {
         display: flex;
         align-items: center;
