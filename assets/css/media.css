@@ -9,14 +9,16 @@
     }
 
     .container {
+        /* 1440px */
         max-width: 90rem;
         margin: auto;
         border-radius: 1rem;
+        /* 32px */
         padding: 2rem;
         max-height: auto;
     }
 
-    .first {
+    .start {
         display: flex;
         justify-content: space-evenly;
     }
@@ -27,25 +29,33 @@
 
     .illustration-desktop {
         order: 2;
+        /* 400px */
         flex-basis: 25rem;
         display: block !important;
     }
 
     .form {
         padding: 1rem;
+        /* 80px */
+        padding-block-start: 5rem;
+        /* 48px */
         padding-inline-end: 3rem;
+        /* 480px */
         flex-basis: 30rem;
     }
 
     .title {
+        /* 64px */
         font-size: 4rem;
     }
 
     .success {
+        /* 32px */
         gap: 2rem;
         height: auto;
 
         h1 {
+            /* 48px */
             font-size: 3rem;
         }
     }
